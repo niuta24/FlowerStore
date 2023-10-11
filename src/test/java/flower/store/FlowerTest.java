@@ -30,4 +30,38 @@ public class FlowerTest {
         flower.setColor(color);
         Assertions.assertEquals("#FF0000", flower.getColor());
     }
+
+    @Test
+    public void testSepalLength() {
+        double sepalLength = RANDOM_GENERATOR.nextDouble();
+        flower.setSepalLength(sepalLength);
+        Assertions.assertEquals(sepalLength, flower.getSepalLength());
+    }
+
+    @Test
+    public void testFlower() {
+        Flower flower = new Flower();
+        Assertions.assertNotNull(flower);
+    }
+
+    @Test
+    public void testFlowerWithParameters() {
+        double sepalLength = RANDOM_GENERATOR.nextDouble();
+        FlowerColor color = FlowerColor.RED;
+        double price = RANDOM_GENERATOR.nextDouble();
+        FlowerType flowerType = FlowerType.ROSE;
+        Flower flower = new Flower(sepalLength, color, price, flowerType);
+        Assertions.assertNotNull(flower);
+    }
+
+    @Test
+    public void testFlowerWithFlower() {
+        double sepalLength = RANDOM_GENERATOR.nextDouble();
+        FlowerColor color = FlowerColor.RED;
+        double price = RANDOM_GENERATOR.nextDouble();
+        FlowerType flowerType = FlowerType.ROSE;
+        Flower flower = new Flower(sepalLength, color, price, flowerType);
+        Flower flower2 = new Flower(flower);
+        Assertions.assertNotNull(flower2);
+    }
 }

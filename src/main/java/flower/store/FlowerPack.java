@@ -3,20 +3,22 @@ package flower.store;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@Getter 
+@Getter
+@AllArgsConstructor
 public class FlowerPack {
     private Flower flower;
     private int quantity;
 
-    public FlowerPack(Flower flower, int quantity) {
+    public FlowerPack(Flower flower) {
         this.flower = new Flower(flower);
-        this.quantity = quantity;
+        this.quantity = 1;
     }
+
     public void setQuantity(int quantity) {
         this.quantity = quantity < 1 ? 1 : quantity;
     }
 
     public double getPrice() {
-        return flower.getPrice() * quantity;
+        return quantity * flower.getPrice();
     }
 }

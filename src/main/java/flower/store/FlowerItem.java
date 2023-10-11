@@ -1,7 +1,5 @@
 package flower.store;
 
-public class FlowerItem {
-    public double getPrice() {
-        return 0;
-    }
+public abstract class FlowerItem {
+    public abstract double getPrice();
 }
