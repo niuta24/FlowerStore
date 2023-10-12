@@ -15,8 +15,8 @@ public class FlowerStore {
         return items;
     }
 
-    public void setItems(List<FlowerItem> newItems) {
-        items = newItems; // No need for 'this' keyword
+    public void setItems(List<FlowerItem> items) {
+        this.items = items;
     }
 
     public List<FlowerItem> search(SearchFilter searchFilter) {
