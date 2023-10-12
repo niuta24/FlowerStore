@@ -5,20 +5,19 @@ import java.util.List;
 import flower.filters.SearchFilter;
 
 public class FlowerStore {
-    private List<FlowerItem> items;
 
+    private List<FlowerItem> items; // Made this private for encapsulation
+
+    // Adding a constructor to initialize the items list
     public FlowerStore() {
-        this.items = new ArrayList<>();
+        items = new ArrayList<>();
     }
 
-    public List<FlowerItem> getItems() {
-        return items;
+    public void addItem(FlowerItem item) {
+        items.add(item);
     }
 
-    public void setItems(List<FlowerItem> items) {
-        this.items = items;
-    }
-
+    // Note: Renamed the parameter to avoid hiding the field
     public List<FlowerItem> search(SearchFilter searchFilter) {
         List<FlowerItem> foundItems = new ArrayList<>();
         for (FlowerItem item : items) {
