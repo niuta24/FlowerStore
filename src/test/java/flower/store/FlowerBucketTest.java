@@ -45,20 +45,29 @@ public class FlowerBucketTest {
 
     @Test
     public void testPriceWithMultipleFlowerPacksAndDifferentPrices() {
-        int price1 = RANDOM_GENERATOR.nextInt(MAX_PRICE);
-        int price2 = RANDOM_GENERATOR.nextInt(MAX_PRICE);
+        int price_first = RANDOM_GENERATOR.nextInt(MAX_PRICE);
+        int price_second = RANDOM_GENERATOR.nextInt(MAX_PRICE);
         int quantity = RANDOM_GENERATOR.nextInt(MAX_QUANTITY);
-        Flower flower1 = new Flower();
-        flower1.setFlowerType(FlowerType.ROSE);
-        flower1.setPrice(price1);
-        Flower flower2 = new Flower();
-        flower2.setFlowerType(FlowerType.ROSE);
-        flower2.setPrice(price2);
-        FlowerPack flowerPack1 = new FlowerPack(flower1, quantity);
-        FlowerPack flowerPack2 = new FlowerPack(flower2, quantity);
-        flowerBucket.addFlowerPack(flowerPack1);
-        flowerBucket.addFlowerPack(flowerPack2);
-        Assertions.assertEquals(price1 * quantity + price2 * quantity, flowerBucket.getPrice());
+        Flower flower_first = new Flower();
+        flower_first.setFlowerType(FlowerType.ROSE);
+        flower_first.setPrice(price_first);
+        Flower flower_second = new Flower();
+        flower_second.setFlowerType(FlowerType.ROSE);
+        flower_second.setPrice(price_second);
+        FlowerPack flowerPackFirst = new FlowerPack(flower_first, quantity);
+        FlowerPack flowerPackSecond = new FlowerPack(flower_second, quantity);
+        flowerBucket.addFlowerPack(flowerPackFirst);
+        flowerBucket.addFlowerPack(flowerPackSecond);
+        // Calculate the total price for the first and second flowers
+        double totalPriceFirst = price_first * quantity;
+        double totalPriceSecond = price_second * quantity;
+
+        // Use meaningful variable names to calculate the expected total price
+        double expectedTotalPrice = totalPriceFirst + totalPriceSecond;
+
+        // Assert that the expected total price matches the actual price
+        Assertions.assertEquals(expectedTotalPrice, flowerBucket.getPrice());
+
     }
 
     @Test

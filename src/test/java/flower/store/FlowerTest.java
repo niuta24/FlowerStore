@@ -40,8 +40,8 @@ public class FlowerTest {
 
     @Test
     public void testFlower() {
-        Flower flower = new Flower();
-        Assertions.assertNotNull(flower);
+        Flower newFlower = new Flower(); // Use a different variable name
+        Assertions.assertNotNull(newFlower);
     }
 
     @Test
@@ -50,8 +50,8 @@ public class FlowerTest {
         FlowerColor color = FlowerColor.RED;
         double price = RANDOM_GENERATOR.nextDouble();
         FlowerType flowerType = FlowerType.ROSE;
-        Flower flower = new Flower(sepalLength, color, price, flowerType);
-        Assertions.assertNotNull(flower);
+        Flower newFlower = new Flower(sepalLength, color, price, flowerType); // Use a different variable name
+        Assertions.assertNotNull(newFlower);
     }
 
     @Test
@@ -60,8 +60,8 @@ public class FlowerTest {
         FlowerColor color = FlowerColor.RED;
         double price = RANDOM_GENERATOR.nextDouble();
         FlowerType flowerType = FlowerType.ROSE;
-        Flower flower = new Flower(sepalLength, color, price, flowerType);
-        Flower flower2 = new Flower(flower);
-        Assertions.assertNotNull(flower2);
+        Flower newFlower = new Flower(sepalLength, color, price, flowerType); // Use a different variable name
+        Flower newflowerSecond = new Flower(newFlower); // Use a different variable name
+        Assertions.assertNotNull(newflowerSecond);
     }
 }
