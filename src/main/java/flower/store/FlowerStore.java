@@ -15,8 +15,8 @@ public class FlowerStore {
         return items;
     }
 
-    public void setItems(List<FlowerItem> items) {
-        this.items = items;
+    public void setItems(List<FlowerItem> newItems) {
+        this.items = newItems;
     }
 
     public List<FlowerItem> search(SearchFilter searchFilter) {
