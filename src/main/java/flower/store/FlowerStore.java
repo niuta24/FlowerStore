@@ -19,10 +19,10 @@ public class FlowerStore {
         this.items = items;
     }
 
-    public List<FlowerItem> search(SearchFilter filter) {
+    public List<FlowerItem> search(SearchFilter searchFilter) {
         List<FlowerItem> foundItems = new ArrayList<>();
         for (FlowerItem item : items) {
-            if (filter.match(item)) {
+            if (searchFilter.match(item)) {
                 foundItems.add(item);
             }
         }
