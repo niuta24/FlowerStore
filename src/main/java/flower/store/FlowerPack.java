@@ -7,18 +7,18 @@ import lombok.Getter;
 @AllArgsConstructor
 public class FlowerPack {
     private Flower flower;
-    private int quantity;
+    private int myquantity;
 
     public FlowerPack(Flower flower) {
         this.flower = new Flower(flower);
-        this.quantity = 1;
+        this.myquantity = 1;
     }
 
     public void setQuantity(int quantity) {
-        this.quantity = quantity < 1 ? 1 : quantity;
+        this.myquantity = quantity < 1 ? 1 : quantity;
     }
 
     public double getPrice() {
-        return quantity * flower.getPrice();
+        return myquantity * flower.getPrice();
     }
 }
