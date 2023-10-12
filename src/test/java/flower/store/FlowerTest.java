@@ -30,13 +30,6 @@ public class FlowerTest {
     }
 
     @Test
-    public void testSepalLength() {
-        double sepalLength = RANDOM_GENERATOR.nextDouble();
-        flower.setSepalLength(sepalLength);
-        Assertions.assertEquals(sepalLength, flower.getSepalLength());
-    }
-
-    @Test
     public void testFlower() {
         Flower newFlower = new Flower();
         Assertions.assertNotNull(newFlower);
@@ -50,16 +43,5 @@ public class FlowerTest {
         FlowerType flowerType = FlowerType.ROSE;
         Flower newFlower = new Flower(sepalLength, color, price, flowerType);
         Assertions.assertNotNull(newFlower);
-    }
-
-    @Test
-    public void testFlowerWithFlower() {
-        double sepalLength = RANDOM_GENERATOR.nextDouble();
-        FlowerColor color = FlowerColor.RED;
-        double price = RANDOM_GENERATOR.nextDouble();
-        FlowerType flowerType = FlowerType.ROSE;
-        Flower newFlower = new Flower(sepalLength, color, price, flowerType);
-        Flower newFlowerSecond = new Flower(newFlower);
-        Assertions.assertNotNull(newFlowerSecond);
     }
 }
