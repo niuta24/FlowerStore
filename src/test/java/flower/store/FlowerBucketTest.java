@@ -45,22 +45,22 @@ public class FlowerBucketTest {
 
     @Test
     public void testPriceWithMultipleFlowerPacksAndDifferentPrices() {
-        int price_first = RANDOM_GENERATOR.nextInt(MAX_PRICE);
-        int price_second = RANDOM_GENERATOR.nextInt(MAX_PRICE);
+        int priceFirst = RANDOM_GENERATOR.nextInt(MAX_PRICE);
+        int priceSecond = RANDOM_GENERATOR.nextInt(MAX_PRICE);
         int quantity = RANDOM_GENERATOR.nextInt(MAX_QUANTITY);
-        Flower flower_first = new Flower();
-        flower_first.setFlowerType(FlowerType.ROSE);
-        flower_first.setPrice(price_first);
-        Flower flower_second = new Flower();
-        flower_second.setFlowerType(FlowerType.ROSE);
-        flower_second.setPrice(price_second);
-        FlowerPack flowerPackFirst = new FlowerPack(flower_first, quantity);
-        FlowerPack flowerPackSecond = new FlowerPack(flower_second, quantity);
+        Flower flowerFirst = new Flower();
+        flowerFirst.setFlowerType(FlowerType.ROSE);
+        flowerFirst.setPrice(priceFirst);
+        Flower flowerSecond = new Flower();
+        flowerSecond.setFlowerType(FlowerType.ROSE);
+        flowerSecond.setPrice(priceSecond);
+        FlowerPack flowerPackFirst = new FlowerPack(flowerFirst, quantity);
+        FlowerPack flowerPackSecond = new FlowerPack(flowerSecond, quantity);
         flowerBucket.addFlowerPack(flowerPackFirst);
         flowerBucket.addFlowerPack(flowerPackSecond);
         // Calculate the total price for the first and second flowers
-        double totalPriceFirst = price_first * quantity;
-        double totalPriceSecond = price_second * quantity;
+        double totalPriceFirst = priceFirst * quantity;
+        double totalPriceSecond = priceSecond * quantity;
 
         // Use meaningful variable names to calculate the expected total price
         double expectedTotalPrice = totalPriceFirst + totalPriceSecond;
