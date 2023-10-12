@@ -2,10 +2,8 @@ package flower.store;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.Random;
-
 import org.junit.jupiter.api.Assertions;
+import java.util.Random;
 
 public class FlowerTest {
     private static final Random RANDOM_GENERATOR = new Random();
@@ -40,7 +38,7 @@ public class FlowerTest {
 
     @Test
     public void testFlower() {
-        Flower newFlower = new Flower(); // Use a different variable name
+        Flower newFlower = new Flower();
         Assertions.assertNotNull(newFlower);
     }
 
@@ -50,8 +48,7 @@ public class FlowerTest {
         FlowerColor color = FlowerColor.RED;
         double price = RANDOM_GENERATOR.nextDouble();
         FlowerType flowerType = FlowerType.ROSE;
-        Flower newFlower = new Flower(
-                sepalLength, color, price, flowerType); // Use a different variable name
+        Flower newFlower = new Flower(sepalLength, color, price, flowerType);
         Assertions.assertNotNull(newFlower);
     }
 
@@ -61,10 +58,8 @@ public class FlowerTest {
         FlowerColor color = FlowerColor.RED;
         double price = RANDOM_GENERATOR.nextDouble();
         FlowerType flowerType = FlowerType.ROSE;
-        Flower newFlower = new Flower(
-                sepalLength, color, price, flowerType); // Use a different variable name
-        Flower newflowerSecond = new Flower(
-                newFlower); // Use a different variable name
-        Assertions.assertNotNull(newflowerSecond);
+        Flower newFlower = new Flower(sepalLength, color, price, flowerType);
+        Flower newFlowerSecond = new Flower(newFlower);
+        Assertions.assertNotNull(newFlowerSecond);
     }
 }

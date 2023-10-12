@@ -5,7 +5,19 @@ import java.util.List;
 import flower.filters.SearchFilter;
 
 public class FlowerStore {
-    public List<FlowerItem> items;
+    private List<FlowerItem> items;
+
+    public FlowerStore() {
+        this.items = new ArrayList<>();
+    }
+
+    public List<FlowerItem> getItems() {
+        return items;
+    }
+
+    public void setItems(List<FlowerItem> items) {
+        this.items = items;
+    }
 
     public List<FlowerItem> search(SearchFilter filter) {
         List<FlowerItem> foundItems = new ArrayList<>();

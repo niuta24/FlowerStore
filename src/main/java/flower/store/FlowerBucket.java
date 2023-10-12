@@ -12,11 +12,7 @@ public class FlowerBucket {
     private List<FlowerPack> flowerPacks = new ArrayList<FlowerPack>();
 
     public void addFlowerPack(FlowerPack flowerPack) {
-        try {
-            flowerPacks.add(flowerPack);
-        } catch (Exception e) {
-            System.out.println("Something went wrong!");
-        }
+        flowerPacks.add(flowerPack);
     }
 
     public double getPrice() {
